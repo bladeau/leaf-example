@@ -1,8 +1,8 @@
 {
   "cut": {
-    "id": "practice-only-1.2.1",
-    "version": "1.2.1",
-    "supersedes": "1.2.0"
+    "id": "practice-only-1.2.2",
+    "version": "1.2.2",
+    "supersedes": "1.2.1"
   },
   "recipe": {
     "name": "practice-only",
@@ -15,8 +15,8 @@
   "packs": [
     {
       "name": "kihon",
-      "version": "0.1.4",
-      "commit": "30198174671a8a4b482bb9320796821e0a8350f7"
+      "version": "0.1.5",
+      "commit": "ba7fba8ef283c329ba157087ab34bea92baf288b"
     },
     {
       "name": "kata",
@@ -129,7 +129,7 @@
     },
     {
       "path": "kihon/AGENT.md",
-      "sha256": "1bbf119cc0831d55d77af711153fb9877459a9bf761937058f6aa945f989aa34",
+      "sha256": "9e410a29e92c35e396d6eaf75cd654bb47b41a1c8aa296556fdba063e32f87a1",
       "ownership": "generated",
       "pack": "kihon"
     },
@@ -147,13 +147,13 @@
     },
     {
       "path": "kihon/CHANGELOG.md",
-      "sha256": "212b115500a6856be1821cd14d650b120b8860b5802169b25aad2465fe968149",
+      "sha256": "7db9b36a3f125fa09982b6fb9da532fcc748057d9064ecb666bb1b31e6e7669f",
       "ownership": "generated",
       "pack": "kihon"
     },
     {
       "path": "kihon/KIHON.md",
-      "sha256": "e6f7722856f671ddb0de23679f8591d6f577c3d8adb79f9071c1088184380beb",
+      "sha256": "17fbee61ae3d39a786fe639e679eea31df66e1965c42eb33a355c268850b690d",
       "ownership": "generated",
       "pack": "kihon"
     },
@@ -200,16 +200,9 @@
       "pack": "kihon"
     }
   ],
-  "createdAt": "2026-07-30T12:05:13.140Z",
+  "createdAt": "2026-07-30T12:22:29.884Z",
   "tool": {
     "name": "kaiden/compose",
     "version": "1.0.0"
-  },
-  "heldBack": [
-    {
-      "path": "kihon/AGENT.md",
-      "sha256": "0d7142a7cb74959f12a9a3bedf0bd31b631859e6f70818647e7b4d7c2fec9eb4",
-      "why": "MERGE"
-    }
-  ]
+  }
 }

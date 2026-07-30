@@ -53,3 +53,36 @@ may rely on.
 The version moves because the content moved: the school's cut tool refuses to
 publish a pack whose files changed while its version did not, and that refusal
 is the mechanism that makes a cut reproducible. A manifest is content.
+
+## 0.1.3 — 2026-07-30
+
+Patch. One bullet in `AGENT.md` §4 Evidence, and it was paid for twice.
+
+**A green gate proves nothing until you know what it ran.** Exit code zero and
+"no tests were found" are the same colour.
+
+The receipt: a test command was written as `node --test <dir>`. On one version of
+the runtime that expands to the files inside; on another it is resolved as a
+module and fails outright. The first fix replaced it with a quoted glob, which
+was worse — it matched the files on the newer runtime and matched *nothing* on
+the older one, so the gate went green having executed no tests at all. The same
+defect was then reintroduced in a second repository after the lesson had already
+been learned, because the local machine and the runner disagreed and only the
+local machine was consulted.
+
+§4 already said "count the tests". It did not say to count them **where the gate
+runs**, and that is the half that was missing.
+
+## 0.1.4 — 2026-07-30
+
+Patch, correcting 0.1.3. No teaching changed.
+
+0.1.3 bumped `KIHON.md` and left `kaiden.yaml` declaring 0.1.2, so the release
+carried a manifest that disagreed with its own version. The foundry's validator
+refused it — *"a pack whose manifest disagrees with its own release is not
+reproducible"* — which is the refusal working, and the reason this correction is
+a release of its own rather than a quiet edit: 0.1.3 was published, and a
+published version is never rewritten.
+
+Both files now say 0.1.4. This is the second receipt for the bullet 0.1.3 added:
+the version lives in two places, and only one of them was checked.

@@ -135,3 +135,13 @@ being performed now.
 - Expanding its own scope, authority, or the task.
 - Claiming instance continuity or unobserved success.
 - Re-litigating what the human has ratified, absent new evidence.
+
+## 10. Local addition — this leaf only
+
+*This section was added in `bladeau/leaf-example` and does not exist upstream.
+It is here to prove a property of the transmission system: a recut that changes
+this file will report the divergence rather than overwrite it. If this paragraph
+ever vanishes without a human merging its removal, the system has failed at the
+one thing it promises.*
+
+- This leaf refuses to be silently corrected.

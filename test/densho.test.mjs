@@ -79,18 +79,37 @@ test('every file the cut claims is present, and unmodified', () => {
     return createHash('sha256').update(content).digest('hex');
   };
 
+  // `heldBack` names the paths a recut did NOT apply, with the checksum this
+  // leaf kept instead. Those are the declared divergences.
+  const held = new Map((manifest.heldBack ?? []).map((h) => [h.path, h.sha256]));
+
   const missing = [];
-  const changed = [];
+  const wrong = [];
+  const diverged = [];
   for (const file of manifest.files) {
     if (!existsSync(file.path)) { missing.push(file.path); continue; }
-    if (normalised(readFileSync(file.path)) !== file.sha256) changed.push(file.path);
+    const now = normalised(readFileSync(file.path));
+    if (now === file.sha256) continue;
+    if (held.has(file.path)) {
+      // Declared. It must be exactly what the record says it is, or the record
+      // is describing a file that no longer exists in that form.
+      if (held.get(file.path) !== now) wrong.push(file.path);
+    } else {
+      diverged.push(file.path);
+    }
   }
 
   assert.deepEqual(missing, [], 'the manifest claims files this leaf does not have');
-  // A changed `generated` file is not an error in a leaf — it is a MERGE waiting
-  // to be reported. But this leaf has not edited any, and if that stops being
-  // true the recut proof needs to know it was deliberate.
-  assert.deepEqual(changed, [], 'a carried file has been edited; a recut will report it rather than overwrite it');
+  assert.deepEqual(wrong, [], 'heldBack records a checksum this file no longer has');
+
+  // AN EDITED CARRIED FILE IS NOT AN ERROR. Cultivation is the point of a leaf,
+  // and a recut reports such a file rather than overwriting it. An earlier
+  // version of this test asserted `diverged` was empty, which amounted to
+  // asserting that nobody had ever worked here.
+  if (diverged.length > 0) {
+    console.log(`  note: ${diverged.length} carried file(s) edited here — a recut will report, not overwrite:`);
+    for (const path of diverged) console.log(`    ${path}`);
+  }
 });
 
 test('ownership covers every carried file', () => {

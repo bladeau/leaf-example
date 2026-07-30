@@ -2,7 +2,7 @@
 
 **Fundamentals for AI-harnessed development.**
 
-Version: 0.1.2 (see CHANGELOG.md)
+Version: 0.1.4 (see CHANGELOG.md)
 Status: proto-specification — enforced by reading discipline, not tooling.
 Root file of the drop-in `kihon/` layer.
 

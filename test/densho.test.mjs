@@ -88,28 +88,31 @@ test('every file the cut claims is present, and unmodified', () => {
     return createHash('sha256').update(content).digest('hex');
   };
 
-  // `heldBack` names the paths a recut did NOT apply, with the checksum this
-  // leaf kept instead. Those are the declared divergences.
+  // `heldBack` names the paths this leaf did NOT take from the cut, each carrying
+  // the checksum it was last GIVEN there — deliberately NOT the checksum it
+  // currently has. Those are two different things, and an earlier version of this
+  // test asserted they were equal, which is the mistake the foundry itself made:
+  // treating what the leaf has as what it was given makes the leaf look untouched
+  // and invites the next cut to overwrite it.
   const held = new Map((manifest.heldBack ?? []).map((h) => [h.path, h.sha256]));
 
   const missing = [];
-  const wrong = [];
+  const pointless = [];
   const diverged = [];
   for (const file of manifest.files) {
     if (!existsSync(file.path)) { missing.push(file.path); continue; }
     const now = normalised(readFileSync(file.path));
-    if (now === file.sha256) continue;
     if (held.has(file.path)) {
-      // Declared. It must be exactly what the record says it is, or the record
-      // is describing a file that no longer exists in that form.
-      if (held.get(file.path) !== now) wrong.push(file.path);
-    } else {
-      diverged.push(file.path);
+      // A held-back row must disagree with the cut, or it is recording that this
+      // leaf declined something identical to what it already had.
+      if (held.get(file.path) === file.sha256) pointless.push(file.path);
+      continue;
     }
+    if (now !== file.sha256) diverged.push(file.path);
   }
 
   assert.deepEqual(missing, [], 'the manifest claims files this leaf does not have');
-  assert.deepEqual(wrong, [], 'heldBack records a checksum this file no longer has');
+  assert.deepEqual(pointless, [], 'heldBack records a path where nothing was actually held back');
 
   // AN EDITED CARRIED FILE IS NOT AN ERROR. Cultivation is the point of a leaf,
   // and a recut reports such a file rather than overwriting it. An earlier

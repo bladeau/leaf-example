@@ -60,10 +60,19 @@ test('nothing outside .densho/ refers to the foundry', () => {
 });
 
 test('the records agree with each other', () => {
-  assert.equal(field('origin.yaml', 'cut'), manifest.cut.id);
+  // ORIGIN IS THE BIRTH RECORD AND DOES NOT MOVE. An earlier version of this
+  // asserted origin's cut equalled the current one, which amounted to asserting
+  // no recut had ever happened — it failed on the first real recut PR, which is
+  // the leaf's CI doing precisely the job the foundry must not do for it.
+  // What must hold forever is the recipe: a leaf is not regrown from a different
+  // one, it is recut from newer versions of the same one.
+  assert.equal(field('origin.yaml', 'name'), manifest.recipe.name);
+  assert.match(field('origin.yaml', 'cut'), new RegExp(`^${manifest.recipe.name}-\\d+\\.\\d+\\.\\d+$`));
+
+  // The lock and last-cut are both CURRENT state, so these must agree exactly.
+  // If the lock pinned a different grammar than the manifest was cut against, a
+  // recut would compare this leaf against rules it never received.
   assert.equal(field('lock.yaml', 'name'), manifest.recipe.name);
-  // The lock must pin the same grammar the manifest was cut against, or a recut
-  // would compare this leaf against rules it never received.
   assert.equal(field('lock.yaml', 'commit'), manifest.ichiryu.commit);
 });
 

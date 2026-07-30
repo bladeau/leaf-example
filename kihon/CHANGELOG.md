@@ -86,3 +86,23 @@ published version is never rewritten.
 
 Both files now say 0.1.4. This is the second receipt for the bullet 0.1.3 added:
 the version lives in two places, and only one of them was checked.
+
+## 0.1.5 — 2026-07-30
+
+Patch. One more bullet in `AGENT.md` §4, and this one is about the shape of the
+hole rather than any particular tool.
+
+**A tool that worked once has not been verified.** The second call in the same
+environment runs against state the first one left behind, and that is where the
+untested branch lives.
+
+The receipt: a tool that clones a repository if absent and fetches it if present
+was exercised in a job where every clone was absent. It passed. The next step in
+the same job found them all present, took the fetch branch, and failed on
+credentials the clone had supplied for itself. Both branches were written at the
+same time; only one had ever run.
+
+This is not the same lesson as the bullet above it. That one says read the gate's
+output. This one says the gate may not have reached the code at all — first-run
+and second-run are different programs, and a suite that only ever starts from
+nothing tests half of what was written.

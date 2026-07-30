@@ -1,0 +1,19 @@
+# Who owns which paths here. FIRST MATCH WINS, so the specific rule goes first.
+#
+#   generated  the foundry may replace it, but only where this leaf has not
+#              touched it. Edit one of these and a recut will report a MERGE
+#              rather than overwrite your work.
+#   mergeable  both sides change it; a human resolves.
+#   local      this leaf owns it absolutely. Never proposed, never touched.
+#   advisory   the teaching applies, but no file is edited automatically.
+#
+# This file is YOURS to narrow. It came from the recipe that grew this leaf,
+# and it outranks the recipe from here on: leaf, then recipe, then packs, then
+# Ichiryū last. Reclassify anything you have made your own.
+
+rules:
+  - glob: kihon/**
+    ownership: generated
+  - glob: kata/**
+    ownership: generated
+default: local

@@ -1,0 +1,13 @@
+# Where this leaf came from. Written once, at birth, and never rewritten —
+# a recut updates last-cut.json and lock.yaml, not this file.
+#
+# This directory is DATA. Nothing here is imported, executed, or required for
+# this repository to build, test or run. That is deliberate: a leaf that needed
+# the foundry to exist would have stopped being a normal repository.
+
+recipe:
+  name: practice-only
+  version: 1.0.0
+cut: practice-only-1.1.0
+bornAt: 2026-07-30T11:29:52.115Z
+foundry: bladeau/Kaiden

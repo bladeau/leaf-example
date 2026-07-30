@@ -1,0 +1,11 @@
+{
+  "name": "leaf-example",
+  "version": "0.1.0",
+  "private": true,
+  "description": "A leaf grown from a cut of the practice-only recipe. Proves a leaf runs without the foundry.",
+  "type": "module",
+  "scripts": {
+    "test": "node --test test/"
+  },
+  "license": "MIT"
+}

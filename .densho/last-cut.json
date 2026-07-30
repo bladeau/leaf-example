@@ -1,0 +1,208 @@
+{
+  "cut": {
+    "id": "practice-only-1.1.0",
+    "version": "1.1.0",
+    "supersedes": "1.0.0"
+  },
+  "recipe": {
+    "name": "practice-only",
+    "version": "1.0.0"
+  },
+  "ichiryu": {
+    "version": "0.4.0",
+    "commit": "cdf94603e8988411d9ce439b3fe96594bcf2fb8e"
+  },
+  "packs": [
+    {
+      "name": "kihon",
+      "version": "0.1.2",
+      "commit": "fa953e8b6add937a76192d3739d23042b90a4aa3"
+    },
+    {
+      "name": "kata",
+      "version": "0.3.3",
+      "commit": "947235ae051e9fcd3a19ef99346ac7a595b233b7"
+    }
+  ],
+  "files": [
+    {
+      "path": "kata/ADOPTION.md",
+      "sha256": "a44e1c1367dee20964f82ae70d7607309f06d64ef5e1bce97d2ff901e44144dd",
+      "ownership": "generated",
+      "pack": "kata"
+    },
+    {
+      "path": "kata/CHANGELOG.md",
+      "sha256": "3e125be4b8bf0b11d81f399aa866b98ebd23475b8fd4a1044a91cb96b984dc6e",
+      "ownership": "generated",
+      "pack": "kata"
+    },
+    {
+      "path": "kata/KATA.md",
+      "sha256": "c14d78d68ab24099bd75d35ba9181ab1c4cbe59e0050b72c02134a552aa636c7",
+      "ownership": "generated",
+      "pack": "kata"
+    },
+    {
+      "path": "kata/PROTOAGENT.md",
+      "sha256": "afae579852a9238a809c265253a8a234a5a0ef382d54496aff2198f5224d1690",
+      "ownership": "generated",
+      "pack": "kata"
+    },
+    {
+      "path": "kata/STUB.md",
+      "sha256": "c058c64b15cde4127fe846e140e04a8924c4f03d052a07c8dab5ee140072eab2",
+      "ownership": "generated",
+      "pack": "kata"
+    },
+    {
+      "path": "kata/base.kata.md",
+      "sha256": "f1c982d55d628d38f579df67752c0bb10d3746b03f65cf674bc167f102d31ea8",
+      "ownership": "generated",
+      "pack": "kata"
+    },
+    {
+      "path": "kata/examples/computed-contract.md",
+      "sha256": "b77c0959fcc6346da203f7f4b1b701047126bc62e967d929f424839dded44d25",
+      "ownership": "generated",
+      "pack": "kata"
+    },
+    {
+      "path": "kata/packs/hexagonal.kata.md",
+      "sha256": "9f3a883441f0e6889f742f73a4b13f60b17d8beac1e4e2a0c342ebac813740bf",
+      "ownership": "generated",
+      "pack": "kata"
+    },
+    {
+      "path": "kata/tokens.kata.md",
+      "sha256": "69387d05141c5f91d2b83658885324fd8222d85279c49a0b982faf1e25cfc78e",
+      "ownership": "generated",
+      "pack": "kata"
+    },
+    {
+      "path": "kata/tools/kata-lint.ts",
+      "sha256": "5252082023835933b72193b66a5385996f9a5f130181cf529e2a5840dc806826",
+      "ownership": "generated",
+      "pack": "kata"
+    },
+    {
+      "path": "kata/traits/clean-room.kata.md",
+      "sha256": "d615846281b0640552bda7090c8844d47e3cc5428d237b79357ca32533bd5b14",
+      "ownership": "generated",
+      "pack": "kata"
+    },
+    {
+      "path": "kata/traits/generator.kata.md",
+      "sha256": "e6f28ac682b463951f6cff7d78ca119438b4fd5cc945dfc6c8e4b5ec3b317fff",
+      "ownership": "generated",
+      "pack": "kata"
+    },
+    {
+      "path": "kata/traits/implementation-agent.kata.md",
+      "sha256": "859893d7488d2164d0e69d97799ca074f2601e87efb67162c1f8e21dda419557",
+      "ownership": "generated",
+      "pack": "kata"
+    },
+    {
+      "path": "kata/traits/read-only.kata.md",
+      "sha256": "bd45dd64cbb49c00f74bb6b10452ffa194cf0f4be33f8e22402c594989be082f",
+      "ownership": "generated",
+      "pack": "kata"
+    },
+    {
+      "path": "kata/traits/reviewer.kata.md",
+      "sha256": "0072f124ab331e6ea254bcb49e484dc58313041e5757dba71a1afb6e0b913a9d",
+      "ownership": "generated",
+      "pack": "kata"
+    },
+    {
+      "path": "kata/traits/typescript.kata.md",
+      "sha256": "76245c3f90aa41c2fdb60404c6543f531f3478e291af3ecf35880c79a8a728ae",
+      "ownership": "generated",
+      "pack": "kata"
+    },
+    {
+      "path": "kata/traits/verifier.kata.md",
+      "sha256": "016ab720bb730485e23c74c2388aef6e8c39349235bb3e1a0a21ca04a499881f",
+      "ownership": "generated",
+      "pack": "kata"
+    },
+    {
+      "path": "kihon/AGENT.md",
+      "sha256": "aa0e7be6894aca5c03a79b7da6df198c8e570ef11b459bcb9956cc1fdab17ecc",
+      "ownership": "generated",
+      "pack": "kihon"
+    },
+    {
+      "path": "kihon/BOOTSTRAP.md",
+      "sha256": "449a36957af5b461c36d5c75b594b1a550e53d8738094994375f9a4645d8c151",
+      "ownership": "generated",
+      "pack": "kihon"
+    },
+    {
+      "path": "kihon/CADENCE.md",
+      "sha256": "409e6131a94c254b6d7a9f9fafa9ad97b547403be9f640d7469860543d56227a",
+      "ownership": "generated",
+      "pack": "kihon"
+    },
+    {
+      "path": "kihon/CHANGELOG.md",
+      "sha256": "9314f216d9ec4d55b54444936a6644ed7291f687a4c6f3a110859bcef73d79d5",
+      "ownership": "generated",
+      "pack": "kihon"
+    },
+    {
+      "path": "kihon/KIHON.md",
+      "sha256": "380bd33f1a95c7d21b134ef96935ba5ccb2fdc35d19383741371fc7fd56a3d23",
+      "ownership": "generated",
+      "pack": "kihon"
+    },
+    {
+      "path": "kihon/PROTO.md",
+      "sha256": "d4a866389c1b22fdf838b3633ae44b184c87093319c231798132ad567dc37d6c",
+      "ownership": "generated",
+      "pack": "kihon"
+    },
+    {
+      "path": "kihon/RECORD.md",
+      "sha256": "3274326e6b8b879967ff7cfe99da4700d52c96ac386ffff2aba573a616639853",
+      "ownership": "generated",
+      "pack": "kihon"
+    },
+    {
+      "path": "kihon/STUB.md",
+      "sha256": "aad32a98a28716be50c0278b9807101f4ffb16ad94564e3e5f727cc2c4dfad33",
+      "ownership": "generated",
+      "pack": "kihon"
+    },
+    {
+      "path": "kihon/templates/adr.md",
+      "sha256": "65f62fd71533abf9b1bac33c319a67c3055484d30589422ae5a91ccee3a0f5fd",
+      "ownership": "generated",
+      "pack": "kihon"
+    },
+    {
+      "path": "kihon/templates/quality-contract.yaml",
+      "sha256": "4506c322101bd9da425ffad1668876c628dfea9f4419d294885c4a0716234a8b",
+      "ownership": "generated",
+      "pack": "kihon"
+    },
+    {
+      "path": "kihon/templates/task.md",
+      "sha256": "3954ab84bfe8a2306ec82c760aa0b96a93939be90a830e5cda00e738bb08dd86",
+      "ownership": "generated",
+      "pack": "kihon"
+    },
+    {
+      "path": "kihon/templates/trace.yaml",
+      "sha256": "5377963a0e76b6b58daee41f699d73bb8dfa8f7a5e76c0685adbc5b6d1428330",
+      "ownership": "generated",
+      "pack": "kihon"
+    }
+  ],
+  "createdAt": "2026-07-30T11:18:03.129Z",
+  "tool": {
+    "name": "kaiden/compose",
+    "version": "1.0.0"
+  }
+}

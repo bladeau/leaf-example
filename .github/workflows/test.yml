@@ -1,0 +1,29 @@
+name: Test the leaf
+
+# The leaf runs its OWN tests, and the foundry never runs them. That division is
+# the point: a recut arrives here as a pull request, and this workflow is what
+# decides whether the proposal is acceptable to this repository. A foundry that
+# graded its own transmissions would be marking its own homework.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      # No install step, and no network. If this ever needs one, the leaf has
+      # taken on a dependency in order to read its own birth record — which is
+      # exactly what .densho/ is shaped to avoid.
+      - run: npm test

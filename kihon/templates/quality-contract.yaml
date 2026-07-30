@@ -1,0 +1,29 @@
+# Quality contract — copy per round, fill BEFORE building (K3).
+# Thin is fine: a contract is a page, not a project plan. The point is
+# that "done" is defined before the work exists.
+
+quality_contract:
+  id: "qc-<round-name>-<yyyy-mm-dd>"
+
+  objective: >
+    One paragraph: what this round makes true, in the human's terms.
+    Include what the round will NOT do if the exclusion is load-bearing.
+
+  must_preserve:
+    - user_intent            # what the human actually asked for, restated
+    - explicit_constraints   # named limits: verbatim installs, untouched behavior, budgets
+    - verified_facts         # what the gates already prove and must keep proving
+    - honest_record          # what this round owes the record (events, flags, lineage)
+
+  required_checks: [requirement_coverage, deterministic_validators]
+  # Add per-round checks: end_to_end_proof, contract_migration, etc.
+
+  thresholds:
+    constraint_coverage: 1.00
+
+  budgets:
+    max_correction_passes: 2
+    budget_notes: ""         # token/latency/cost notes if the round spends live money
+
+  risk: low                  # low | medium | high — drives processing depth (K9's cousin: spend depth where risk lives)
+  ambiguity: low             # low | medium | high — high ambiguity means ask the human before building

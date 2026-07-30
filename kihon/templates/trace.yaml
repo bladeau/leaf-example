@@ -1,0 +1,32 @@
+# Run trace — copy per round, fill DURING and AFTER the work (K3).
+# The trace is what makes the round auditable after everyone forgot it.
+
+trace:
+  task_id: "task#<round-name>"
+  quality_contract_id: "qc-<round-name>-<yyyy-mm-dd>"
+
+  evidence_used:
+    # Anchored facts the round stood on — one line each. Examples:
+    # - "red first: <case> failed for <reason>, then green"
+    # - "suite <n>/<n>; typechecks; lint clean"
+    # - "end-to-end proof on the isolated stack: <what was driven, what was observed>"
+    - ""
+
+  assumptions:
+    # What was assumed rather than verified, stated so a reader can re-check.
+    - ""
+
+  detected_issues: []        # what went wrong mid-round, one line each
+  corrections: []            # what was done about each, mapped by position
+
+  scope_note: >
+    Only if scope moved mid-round: what arrived, what was folded in,
+    what was queued for its own round.
+
+  final_metrics:
+    constraint_coverage: 1.00
+    tests_green: "<n>/<n>"
+
+  # Exactly ONE stop reason (K3): why the work stopped, honestly.
+  # quality_contract_satisfied | budget_exhausted | escalated_to_human | blocked
+  stop_reason: "quality_contract_satisfied"

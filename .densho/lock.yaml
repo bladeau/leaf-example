@@ -1,0 +1,18 @@
+# What this leaf currently carries, exactly.
+#
+# Never a range and never "latest": these are the commits the cut was made
+# from, so the same inputs can be reproduced years from now.
+
+recipe:
+  name: practice-only
+  version: 1.0.0
+ichiryu:
+  version: 0.4.0
+  commit: cdf94603e8988411d9ce439b3fe96594bcf2fb8e
+packs:
+  kihon:
+    version: 0.1.2
+    commit: fa953e8b6add937a76192d3739d23042b90a4aa3
+  kata:
+    version: 0.3.3
+    commit: 947235ae051e9fcd3a19ef99346ac7a595b233b7

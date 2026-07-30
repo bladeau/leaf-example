@@ -7,12 +7,12 @@ recipe:
   name: practice-only
   version: 1.0.0
 ichiryu:
-  version: 0.5.0
-  commit: f9ab62ea47d7e32da7a0ad6de38f46f4a3ab8200
+  version: 0.5.1
+  commit: 9d5a274eb4a57ad659f30952ecd9fdccb2555ba8
 packs:
   kihon:
-    version: 0.1.4
-    commit: 30198174671a8a4b482bb9320796821e0a8350f7
+    version: 0.1.5
+    commit: ba7fba8ef283c329ba157087ab34bea92baf288b
   kata:
     version: 0.3.3
     commit: 947235ae051e9fcd3a19ef99346ac7a595b233b7

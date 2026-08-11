@@ -2,7 +2,7 @@
 
 **Constitutional cascade language for AI-assisted systems.**
 
-Version: 0.3.3 (see CHANGELOG.md)
+Version: 0.4.0 (see CHANGELOG.md)
 Status: proto-specification
 Root file of the drop-in `kata/` layer.
 
@@ -82,7 +82,7 @@ This layer follows semver. Every `PROJECT.kata.md` must declare the version it c
 
 ```
 project#example {
-  kata-version: 0.3.3;
+  kata-version: 0.4.0;
 }
 ```
 

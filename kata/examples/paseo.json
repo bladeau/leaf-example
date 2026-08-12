@@ -1,0 +1,11 @@
+{
+  "$comment": "Estate drop-in (Kata 0.4.0, packs/estate). Copy to a venture's root as paseo.json — the planning seats appear in its Paseo room. Commands must be STRINGS, not argv arrays (Paseo drops arrays silently). Replace the planner's path with the box's own CodeWhale binary; 'fable' assumes a Claude Code install on PATH. Keys never enter this file — it is committed.",
+  "scripts": {
+    "planner": {
+      "command": "C:\\nvm4w\\nodejs\\node_modules\\codewhale\\bin\\downloads\\codewhale.exe --provider deepseek --model deepseek-v4-pro"
+    },
+    "fable": {
+      "command": "claude"
+    }
+  }
+}

@@ -2,6 +2,17 @@
 
 Semver for the Kata layer itself. Consuming projects declare the version they cascade from (`kata-version:` in `PROJECT.kata.md`) and re-run the fresh-reader test on every upgrade.
 
+## 0.4.0 — 2026-08-11
+
+The Estate. Lands the Rev-3 standing rules as law (ESTATE REV-3 HANDOFF, ratified with rulings by the Chair 2026-08-11; the ratification record is Boardroom Round 274).
+
+- New pack `packs/estate.kata.md` — the standing rules as protected law: authority down through gates, evidence up through stamps, no layer both decides and executes; never-raw; the auditor may block and never approve, decorrelated from the generator. Entities: `room` (a place), `seat` (a brain), `surface` (a replaceable, attach-only window that owes no diff review — the IDE is the diff surface), `auditor`, `evidence`. Estate tokens: `--estate-home` (the capital, C:/Ichiryu — ruling B5), `--estate-registry`, `--estate-execution-owner: paseo`.
+- New pack `packs/registry.kata.md` — the registry's schema and law, with the instance deliberately OUTSIDE the law (ruling B2: schema in law, instance in Chair-declared state). Protected: the registry owns identity. Entry schema: id, path, aliases, law, verifier required; brief, workspace, severity-threshold, decisions, starred optional. Birth registers (ruling B1): the ceremony writes the entry, the Chair runs the ceremony, the first landed round proves it.
+- New pack `packs/tiers.kata.md` — dispatch tiers reconciling Rev-3's valve with the standing amendment of 2026-08-02 (ruling B3): trivial auto-dispatches into verifier loops and is blocked by auditor findings at or above the entry's threshold; standard is the round law as lived; irreversible/expensive/credential-touching is Chair-initiated only.
+- New trait `traits/driver.kata.md` — the dumb valve, written and bound to NOTHING (Rev-3 §6 deferral): relay verbatim, dispatch-is-ask, zero write tools, no delegation, never touch what you can't identify. Carries its harness-half requirement (law here, enforcement in the binding harness's own permission layer) and gate GA.
+- New example `examples/paseo.json` — the estate drop-in for a venture's planning seats (commands as strings; keys never in the file).
+- Packs remain optional and additive; no core, base, token, or PROTOAGENT change. Declaring `estate` without `registry` and `tiers` is a lint defect by declaration in the pack's prose.
+
 ## 0.1.0 — 2026-07-22
 
 Initial release. Derived from the ProtoCSS draft specification, renamed **Kata**, with these structural changes:
